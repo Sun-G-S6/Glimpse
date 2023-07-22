@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="720.0" maxWidth="1400.0" minHeight="700.0" minWidth="1000.0" prefHeight="720.0" prefWidth="1400.0" style="-fx-background-color: #7A65CD;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="application.LoginPageController">
+   <children>
+      <Label layoutX="111.0" layoutY="200.0" prefHeight="304.0" prefWidth="590.0" text="Welcome to Glimpse." textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="96.0" />
+         </font>
+      </Label>
+      <Circle fill="WHITE" layoutX="1562.0" layoutY="406.0" radius="900.0" stroke="WHITE" strokeType="INSIDE" />
+      <TextField layoutX="951.0" layoutY="310.0" prefHeight="40.0" prefWidth="359.0" promptText="Enter Your Name Here" style="-fx-background-color: #F2F0FA;">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </TextField>
+      <PasswordField layoutX="951.0" layoutY="360.0" prefHeight="40.0" prefWidth="359.0" promptText="Enter Your Password Here" style="-fx-background-color: #F2F0FA;">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </PasswordField>
+      <Label layoutX="951.0" layoutY="406.0" text="Forgot your Password?" textFill="#97569e" />
+      <Button layoutX="1055.0" layoutY="445.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="151.0" style="-fx-background-color: #F2F0FA;" text="Login" textFill="#684b83">
+         <font>
+            <Font size="19.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>
