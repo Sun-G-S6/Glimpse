@@ -9,7 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class LoginPageController {
+public class changePWPageController {
 	
 	private String pw = "p";
 	
