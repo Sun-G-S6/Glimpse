@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import application.changePW.ChangePWPageController;
 import application.home.HomePageController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -38,10 +39,15 @@ public class LoginPageController implements Initializable{
 	@FXML public void loginAction(ActionEvent e ) {
 		try {
 			
-			if(this.loginModel.isLogin(this.pwField.getText())) {
+			if(!this.pwField.getText().equals("p") && this.loginModel.isLogin(this.pwField.getText())) {
 				Stage stage = (Stage)this.loginBtn.getScene().getWindow();
 				stage.close();
 				userLogin();
+			}
+			else if (this.pwField.getText().equals("p") && this.loginModel.isLogin(this.pwField.getText()) ) {
+				Stage stage = (Stage)this.loginBtn.getScene().getWindow();
+				stage.close();
+				firstTimeLogin();
 			}
 			else {
 				this.loginStatusLbl.setText("Wrong Password");
@@ -62,6 +68,23 @@ public class LoginPageController implements Initializable{
 			Scene scene = new Scene(root);
 			userStage.setScene(scene);
 			userStage.setTitle("Home Page");
+			userStage.setResizable(false);
+			userStage.show();
+		}catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void firstTimeLogin() {
+		try {
+			Stage userStage = new Stage();
+			FXMLLoader loader = new FXMLLoader();
+			Pane root = (Pane)loader.load(getClass().getResource("/application/changePW/ChangePWPage.fxml").openStream());
+			ChangePWPageController changePWController = (ChangePWPageController)loader.getController();
+			
+			Scene scene = new Scene(root);
+			userStage.setScene(scene);
+			userStage.setTitle("Change Password");
 			userStage.setResizable(false);
 			userStage.show();
 		}catch (IOException e) {
