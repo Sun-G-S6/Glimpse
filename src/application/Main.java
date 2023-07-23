@@ -19,7 +19,7 @@ public class Main extends Application {
 		try {
 			stg = primaryStage;
 			primaryStage.setResizable(false);
-			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
+			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("/application/login/LoginPage.fxml"));
 			Scene scene = new Scene(root,1400,700);
 //			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
