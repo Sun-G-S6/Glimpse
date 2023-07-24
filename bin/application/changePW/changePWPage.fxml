@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="720.0" maxWidth="1400.0" minHeight="700.0" minWidth="1000.0" prefHeight="720.0" prefWidth="1400.0" style="-fx-background-color: #7A65CD;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.changePW.ChangePWPageController">
    <children>
-      <Label layoutX="111.0" layoutY="200.0" prefHeight="304.0" prefWidth="590.0" text="Welcome to Glimpse." textFill="WHITE" wrapText="true">
+      <Label layoutX="111.0" layoutY="200.0" prefHeight="304.0" prefWidth="590.0" text="Password &amp; Security" textFill="WHITE" wrapText="true">
          <font>
             <Font size="96.0" />
          </font>

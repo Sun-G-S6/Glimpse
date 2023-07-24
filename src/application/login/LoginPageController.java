@@ -3,9 +3,6 @@ package application.login;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import application.changePW.ChangePWPageController;
-import application.home.HomePageController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,11 +12,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import application.user.UserCredentials;
-
+import application.changePW.ChangePWPageController;
+import application.home.HomePageController;
+import application.changePW.ForgotPWPageController;
 
 public class LoginPageController implements Initializable{
 	
@@ -58,7 +58,18 @@ public class LoginPageController implements Initializable{
 			}
 			
 		}catch (Exception localException) {
+			localException.printStackTrace();
+		}
+	}
+	
+	@FXML public void forgotAction(MouseEvent e ) {
+		try {
+				Stage stage = (Stage)this.loginBtn.getScene().getWindow();
+				stage.close();
+				forgotPW();
 			
+		}catch (Exception localException) {
+			localException.printStackTrace();
 		}
 	}
 	
@@ -89,6 +100,23 @@ public class LoginPageController implements Initializable{
 			Scene scene = new Scene(root);
 			userStage.setScene(scene);
 			userStage.setTitle("Change Password");
+			userStage.setResizable(false);
+			userStage.show();
+		}catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void forgotPW() {
+		try {
+			Stage userStage = new Stage();
+			FXMLLoader loader = new FXMLLoader();
+			Pane root = (Pane)loader.load(getClass().getResource("/application/changePW/ForgotPWPage.fxml").openStream());
+			ForgotPWPageController forgotPWController = (ForgotPWPageController)loader.getController();
+			
+			Scene scene = new Scene(root);
+			userStage.setScene(scene);
+			userStage.setTitle("Forgot Password");
 			userStage.setResizable(false);
 			userStage.show();
 		}catch (IOException e) {

@@ -27,7 +27,10 @@
             <Font size="19.0" />
          </font>
       </PasswordField>
-      <Label layoutX="951.0" layoutY="406.0" text="Forgot your Password?" textFill="#97569e" />
+      <Label fx:id="forgotLbl" layoutX="951.0" layoutY="406.0" onMouseClicked="#forgotAction" text="Forgot your Password?" textFill="#97569e">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Label>
       <Button fx:id="loginBtn" layoutX="1055.0" layoutY="445.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="28.0" prefWidth="151.0" style="-fx-background-color: #F2F0FA;" text="Login" textFill="#684b83">
          <font>
             <Font size="19.0" />
