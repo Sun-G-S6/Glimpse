@@ -18,6 +18,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import application.user.UserCredentials;
+
+
 public class LoginPageController implements Initializable{
 	
 	LoginModel loginModel = new LoginModel();
@@ -38,13 +41,14 @@ public class LoginPageController implements Initializable{
 	
 	@FXML public void loginAction(ActionEvent e ) {
 		try {
+			UserCredentials currentUser = new UserCredentials();
 			
-			if(!this.pwField.getText().equals("p") && this.loginModel.isLogin(this.pwField.getText())) {
+			if(!currentUser.getPasswordFromDatabase().equals("p") && this.loginModel.isLogin(this.pwField.getText())) {
 				Stage stage = (Stage)this.loginBtn.getScene().getWindow();
 				stage.close();
 				userLogin();
 			}
-			else if (this.pwField.getText().equals("p") && this.loginModel.isLogin(this.pwField.getText()) ) {
+			else if (currentUser.getPasswordFromDatabase().equals("p") && this.loginModel.isLogin(this.pwField.getText()) ) {
 				Stage stage = (Stage)this.loginBtn.getScene().getWindow();
 				stage.close();
 				firstTimeLogin();

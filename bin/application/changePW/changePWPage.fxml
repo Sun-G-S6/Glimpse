@@ -28,7 +28,8 @@
       </TextField>
       <PasswordField fx:id="oldPassPF" layoutX="957.0" layoutY="285.0" prefHeight="34.0" prefWidth="350.0" promptText="Enter old password here" />
       <PasswordField fx:id="newPassPF" layoutX="957.0" layoutY="325.0" prefHeight="34.0" prefWidth="350.0" promptText="Enter new password here" />
-      <PasswordField fx:id="confirmPassPF" layoutX="957.0" layoutY="364.0" prefHeight="34.0" prefWidth="350.0" promptText="Confirm new password here" />
-      <Button fx:id="submitBtn" layoutX="1160.0" layoutY="459.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="144.0" style="-fx-background-color: #F2F0FA;" text="Submit" textFill="#6816b5" />
+      <PasswordField fx:id="confirmNewPassPF" layoutX="957.0" layoutY="364.0" prefHeight="34.0" prefWidth="350.0" promptText="Confirm new password here" />
+      <Button fx:id="submitBtn" layoutX="1160.0" layoutY="459.0" mnemonicParsing="false" onAction="#addNewQuesAndPassAction" prefHeight="14.0" prefWidth="144.0" style="-fx-background-color: #F2F0FA;" text="Submit" textFill="#6816b5" />
+      <Label fx:id="errorMsgLbl" alignment="CENTER" layoutX="957.0" layoutY="135.0" prefHeight="34.0" prefWidth="350.0" textFill="#8045a4" />
    </children>
 </AnchorPane>
