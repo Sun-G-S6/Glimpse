@@ -84,17 +84,19 @@ public class HomePageController implements Initializable{
 	
 	@FXML public void logoutAction(ActionEvent e) {
 		try {
+			Stage stage = (Stage)this.logoutBtn.getScene().getWindow();
+			stage.close();
 			
-					Stage userStage = new Stage();
-					FXMLLoader loader = new FXMLLoader();
-					Pane root = (Pane)loader.load(getClass().getResource("/application/login/LoginPage.fxml").openStream());
-					LoginPageController loginController = (LoginPageController)loader.getController();
-					
-					Scene scene = new Scene(root);
-					userStage.setScene(scene);
-					userStage.setTitle("Glimpse");
-					userStage.setResizable(false);
-					userStage.show();
+			Stage userStage = new Stage();
+			FXMLLoader loader = new FXMLLoader();
+			Pane root = (Pane)loader.load(getClass().getResource("/application/login/LoginPage.fxml").openStream());
+			LoginPageController loginController = (LoginPageController)loader.getController();
+				
+			Scene scene = new Scene(root);
+			userStage.setScene(scene);
+			userStage.setTitle("Glimpse");
+			userStage.setResizable(false);
+			userStage.show();
 				
 		}catch (Exception localException) {
 			localException.printStackTrace();
