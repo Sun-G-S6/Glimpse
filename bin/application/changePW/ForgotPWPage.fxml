@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -23,7 +24,10 @@
       </TextField>
       <PasswordField fx:id="newPassPF" layoutX="957.0" layoutY="325.0" prefHeight="34.0" prefWidth="350.0" promptText="Enter new password here" />
       <PasswordField fx:id="confirmNewPassPF" layoutX="957.0" layoutY="364.0" prefHeight="34.0" prefWidth="350.0" promptText="Confirm new password here" />
-      <Button fx:id="submitBtn" layoutX="1160.0" layoutY="459.0" mnemonicParsing="false" onAction="#submitForgotAction" prefHeight="14.0" prefWidth="144.0" style="-fx-background-color: #F2F0FA;" text="Submit" textFill="#6816b5" />
+      <Button fx:id="submitBtn" layoutX="1160.0" layoutY="459.0" mnemonicParsing="false" onAction="#submitForgotAction" prefHeight="14.0" prefWidth="144.0" style="-fx-background-color: #F2F0FA;" text="Submit" textFill="#6816b5">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <Label fx:id="secQuesLbl" layoutX="957.0" layoutY="183.0" prefHeight="34.0" prefWidth="350.0" textFill="#7648a1" />
       <Label fx:id="errorMsgLbl" layoutX="957.0" layoutY="141.0" prefHeight="34.0" prefWidth="350.0" textFill="#7648a1" />
    </children>

@@ -1,6 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: purple;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.home.HomePageController" />
+<BorderPane maxHeight="700.0" maxWidth="1300.0" minHeight="700.0" minWidth="1300.0" prefHeight="700.0" prefWidth="1277.0" style="-fx-background-color: #F2F0FA;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.home.HomePageController">
+   <top>
+      <AnchorPane prefHeight="86.0" prefWidth="1300.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="logoutBtn" layoutX="1155.0" layoutY="30.0" mnemonicParsing="false" onAction="#logoutAction" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #6047C2;" text="Logout" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="MOVE" />
+               </cursor></Button>
+            <Label layoutX="940.0" layoutY="15.0" prefHeight="51.0" prefWidth="192.0" text="Hello User" textFill="#a49b9b">
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </Label>
+            <Button fx:id="changePWBtn" layoutX="19.0" layoutY="20.0" mnemonicParsing="false" onAction="#changePWAction" prefHeight="45.0" prefWidth="242.0" style="-fx-background-color: #6047C2;" text="Change Password &amp; Security Question" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="newTitleTF" layoutX="35.0" layoutY="29.0" prefHeight="42.0" prefWidth="426.0" promptText="Title">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <DatePicker fx:id="newDateDP" layoutX="491.0" layoutY="29.0" />
+            <TextArea fx:id="newEntryTA" layoutX="37.0" layoutY="100.0" prefHeight="465.0" prefWidth="969.0" />
+            <Button fx:id="saveBtn" layoutX="891.0" layoutY="573.0" mnemonicParsing="false" onAction="#addEntryAction" prefHeight="27.0" prefWidth="116.0" style="-fx-background-color: #6047C2;" text="Save" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+   <left>
+      <VBox prefHeight="614.0" prefWidth="264.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="loadEntriesBtn" alignment="CENTER" mnemonicParsing="false" onAction="#loadJournalEntries" style="-fx-background-color: #6047C2;" text="Load Enties" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="90.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <TableView fx:id="entryTable" prefHeight="614.0" prefWidth="264.0">
+              <columns>
+                <TableColumn fx:id="entryCol" maxWidth="263.0" minWidth="263.0" prefWidth="263.0" resizable="false" text="Entries by date" />
+              </columns>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </TableView>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+</BorderPane>

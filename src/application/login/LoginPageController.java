@@ -51,7 +51,7 @@ public class LoginPageController implements Initializable{
 			else if (currentUser.getPasswordFromDatabase().equals("p") && this.loginModel.isLogin(this.pwField.getText()) ) {
 				Stage stage = (Stage)this.loginBtn.getScene().getWindow();
 				stage.close();
-				firstTimeLogin();
+				changePW();
 			}
 			else {
 				this.loginStatusLbl.setText("Wrong Password");
@@ -90,7 +90,7 @@ public class LoginPageController implements Initializable{
 		}
 	}
 	
-	public void firstTimeLogin() {
+	public void changePW() {
 		try {
 			Stage userStage = new Stage();
 			FXMLLoader loader = new FXMLLoader();

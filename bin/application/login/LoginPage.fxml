@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="720.0" maxWidth="1400.0" minHeight="700.0" minWidth="1000.0" prefHeight="720.0" prefWidth="1400.0" style="-fx-background-color: #7A65CD;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.login.LoginPageController">
+<AnchorPane maxHeight="700.0" maxWidth="1300.0" minHeight="700.0" minWidth="1300.0" prefHeight="700.0" prefWidth="1300.0" style="-fx-background-color: #7A65CD;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.login.LoginPageController">
    <children>
       <Label layoutX="111.0" layoutY="200.0" prefHeight="304.0" prefWidth="590.0" text="Welcome to Glimpse." textFill="WHITE" wrapText="true">
          <font>
@@ -17,12 +17,12 @@
          </font>
       </Label>
       <Circle fill="WHITE" layoutX="1562.0" layoutY="406.0" radius="900.0" stroke="WHITE" strokeType="INSIDE" />
-      <TextField fx:id="nameLbl" layoutX="951.0" layoutY="310.0" prefHeight="40.0" prefWidth="359.0" promptText="Enter Your Name Here" style="-fx-background-color: #F2F0FA;">
+      <TextField fx:id="nameLbl" layoutX="935.0" layoutY="310.0" prefHeight="40.0" prefWidth="359.0" promptText="Enter Your Name Here" style="-fx-background-color: #F2F0FA;">
          <font>
             <Font size="19.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="pwField" layoutX="951.0" layoutY="360.0" prefHeight="40.0" prefWidth="359.0" promptText="Enter Your Password Here" style="-fx-background-color: #F2F0FA;">
+      <PasswordField fx:id="pwField" layoutX="935.0" layoutY="360.0" prefHeight="40.0" prefWidth="359.0" promptText="Enter Your Password Here" style="-fx-background-color: #F2F0FA;">
          <font>
             <Font size="19.0" />
          </font>
@@ -40,7 +40,7 @@
          </cursor>
       </Button>
       <Label fx:id="loginStatusLbl" alignment="CENTER" layoutX="952.0" layoutY="272.0" prefHeight="28.0" prefWidth="359.0" textFill="#9c61e4" />
-      <Label fx:id="dbStatusLbl" layoutX="1112.0" layoutY="16.0" prefHeight="17.0" prefWidth="272.0" />
-      <Label layoutX="1002.0" layoutY="16.0" prefHeight="17.0" prefWidth="106.0" text="Database Status:" />
+      <Label fx:id="dbStatusLbl" layoutX="1021.0" layoutY="18.0" prefHeight="17.0" prefWidth="272.0" />
+      <Label layoutX="904.0" layoutY="18.0" prefHeight="17.0" prefWidth="98.0" text="Database Status:" />
    </children>
 </AnchorPane>
