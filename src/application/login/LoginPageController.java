@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -25,20 +26,31 @@ public class LoginPageController implements Initializable{
 	
 	LoginModel loginModel = new LoginModel();
 	
-	@FXML TextField nameLbl;
 	@FXML PasswordField pwField;
 	@FXML Button loginBtn;
 	@FXML Label loginStatusLbl;
 	@FXML Label dbStatusLbl;
 	
+	/*	Initializes the login page by connecting to the database and displays the connection status
+	 * 	Listener event to execute login function if "Enter" key is pressed in the PasswordField
+	 * */
 	public void initialize(URL url, ResourceBundle rb) {
 		if(this.loginModel.isDatabaseConnected()) {
 			this.dbStatusLbl.setText("Connected to Database");
 		}else {
 			this.dbStatusLbl.setText("Not Connected to Database");
 		}
+		pwField.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                loginAction(null);
+            }
+        });
 	}
 	
+	/*	Closes stage runs the changing password function if the password from the database is 'p' (default password)
+	 * 	OR
+	 * 	Closes stage, runs the login function if the password from the database is not a 'p'
+	 * */
 	@FXML public void loginAction(ActionEvent e ) {
 		try {
 			UserCredentials currentUser = new UserCredentials();
@@ -62,6 +74,8 @@ public class LoginPageController implements Initializable{
 		}
 	}
 	
+	/*	Closes the stage and runs the forgot password function
+	 * */
 	@FXML public void forgotAction(MouseEvent e ) {
 		try {
 				Stage stage = (Stage)this.loginBtn.getScene().getWindow();
@@ -73,6 +87,7 @@ public class LoginPageController implements Initializable{
 		}
 	}
 	
+	// Login function that shows the home page
 	public void userLogin() {
 		try {
 			Stage userStage = new Stage();
@@ -90,6 +105,7 @@ public class LoginPageController implements Initializable{
 		}
 	}
 	
+	//Changing password function that goes to the changing password page
 	public void changePW() {
 		try {
 			Stage userStage = new Stage();
@@ -107,6 +123,7 @@ public class LoginPageController implements Initializable{
 		}
 	}
 	
+	//Forgot password function that goes to the forgot password page
 	public void forgotPW() {
 		try {
 			Stage userStage = new Stage();

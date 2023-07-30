@@ -8,7 +8,10 @@ import java.sql.SQLException;
 import dbUtil.dbConnection;
 
 public class UserCredentials {
-
+	
+	/*	Connects to the database
+	 * 	returns: password from database
+	 * */
 	public String getPasswordFromDatabase() {
 	    String sqlQuery = "SELECT password FROM login";
 
@@ -35,6 +38,9 @@ public class UserCredentials {
 	    return correctOldPassword;
 	}
 	
+	/*	Connects to the database
+	 * 	Returns: security question from database
+	 * */
 	public String getSecQuesFromDatabase() {
 	    String sqlQuery = "SELECT securityQuestion FROM login";
 
@@ -61,6 +67,9 @@ public class UserCredentials {
 	    return secQuestion;
 	}
 	
+	/*	Connects to the database
+	 * 	Returns: security answer from database
+	 * */
 	public String getSecAnsFromDatabase() {
 	    String sqlQuery = "SELECT securityAnswer FROM login";
 

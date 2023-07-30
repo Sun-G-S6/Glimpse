@@ -35,6 +35,10 @@ public class ChangePWPageController implements Initializable {
 	@FXML private Button submitBtn;
 	@FXML private Label errorMsgLbl;
 	
+	/*	Takes input for new security question, new security answer, old password, new password, new password confirmation
+	 * 	Checks if the old passwords match, and if the new passwords match
+	 * 	Stores new security question, new security answer, new password, new password confirmation and redirects to home page
+	 * */
 	@FXML private void addNewQuesAndPassAction(ActionEvent event) {
 		String sqlUpdate = "UPDATE login SET password = ?, securityQuestion = ?, securityAnswer = ?";
 		

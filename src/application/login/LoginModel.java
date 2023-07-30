@@ -11,6 +11,7 @@ public class LoginModel {
 	
 	Connection connection;
 	
+	// Connects to the database
 	public LoginModel() {
 		try {
 			this.connection = dbConnection.getConnection();
@@ -23,10 +24,15 @@ public class LoginModel {
 		}
 	}
 	
+	// Return true if there is a database connection
 	public boolean isDatabaseConnected() {
 		return this.connection != null;
 	}
 	
+	/* Compares the inputed password with the database password
+	 * returns true if it matches
+	 * returns false if it doesn't
+	 * */
 	public boolean isLogin(String pass) throws Exception {
 		PreparedStatement pr = null;
 		ResultSet rs = null;
@@ -38,9 +44,7 @@ public class LoginModel {
 			pr.setString(1, pass);
 			
 			rs = pr.executeQuery();
-			
-//			boolean bool1;
-			
+						
 			if (rs.next()) {
 				return true;
 			}

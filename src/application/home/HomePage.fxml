@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTimePicker?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -22,15 +23,16 @@
                <cursor>
                   <Cursor fx:constant="MOVE" />
                </cursor></Button>
-            <Label layoutX="940.0" layoutY="15.0" prefHeight="51.0" prefWidth="192.0" text="Hello User" textFill="#a49b9b">
-               <font>
-                  <Font size="38.0" />
-               </font>
-            </Label>
             <Button fx:id="changePWBtn" layoutX="19.0" layoutY="20.0" mnemonicParsing="false" onAction="#changePWAction" prefHeight="45.0" prefWidth="242.0" style="-fx-background-color: #6047C2;" text="Change Password &amp; Security Question" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
+            <TextField fx:id="searchTF" layoutX="585.0" layoutY="21.0" prefHeight="44.0" prefWidth="303.0" />
+            <Label fx:id="searchLbl" layoutX="499.0" layoutY="20.0" prefHeight="45.0" prefWidth="78.0" text="Search:">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </top>
@@ -42,12 +44,22 @@
                   <Font size="20.0" />
                </font>
             </TextField>
-            <DatePicker fx:id="newDateDP" layoutX="491.0" layoutY="29.0" />
             <TextArea fx:id="newEntryTA" layoutX="37.0" layoutY="100.0" prefHeight="465.0" prefWidth="969.0" />
             <Button fx:id="saveBtn" layoutX="891.0" layoutY="573.0" mnemonicParsing="false" onAction="#addEntryAction" prefHeight="27.0" prefWidth="116.0" style="-fx-background-color: #6047C2;" text="Save" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+            </Button>
+            <JFXTimePicker fx:id="newTimeTP" layoutX="717.0" layoutY="29.0" style="-jfx-default-color: #6047C2;" />
+            <JFXDatePicker fx:id="newDateDP" layoutX="501.0" layoutY="29.0" style="-jfx-default-color: #6047C2;" />
+            <Button fx:id="deleteBtn" layoutX="37.0" layoutY="573.0" mnemonicParsing="false" onAction="#deleteEntry" prefHeight="27.0" prefWidth="116.0" style="-fx-background-color: #6047C2;" text="Delete Entry" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="newEntryBtn" layoutX="35.0" layoutY="-27.0" mnemonicParsing="false" onAction="#addNewEntryBtn" prefHeight="47.0" prefWidth="125.0" style="-fx-background-color: #6047C2;" text="+ New Entry" textFill="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
             </Button>
          </children>
       </AnchorPane>
@@ -55,7 +67,7 @@
    <left>
       <VBox prefHeight="614.0" prefWidth="264.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="loadEntriesBtn" alignment="CENTER" mnemonicParsing="false" onAction="#loadJournalEntries" style="-fx-background-color: #6047C2;" text="Load Enties" textFill="WHITE">
+            <Button fx:id="loadEntriesBtn" alignment="CENTER" mnemonicParsing="false" onAction="#loadJournalEntries" style="-fx-background-color: #6047C2;" text="Load Entries" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="10.0" left="90.0" top="10.0" />
                </VBox.margin>

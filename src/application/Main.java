@@ -21,7 +21,6 @@ public class Main extends Application {
 			primaryStage.setResizable(false);
 			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("/application/login/LoginPage.fxml"));
 			Scene scene = new Scene(root,1300,700);
-//			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setTitle("Glimpse");
 			primaryStage.setScene(scene);
 			primaryStage.show();

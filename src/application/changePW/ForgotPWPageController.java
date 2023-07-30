@@ -40,7 +40,9 @@ public class ForgotPWPageController implements Initializable {
         secQuesLbl.setText(currentUser.getSecQuesFromDatabase());
 	}
 	
-	
+	/*	Checks if security answer is correct, checks if new passwords match, 
+	 * updates password in database then redirects to home page
+	 * */
 	@FXML private void submitForgotAction(ActionEvent event) {
 		String sqlUpdate = "UPDATE login SET password = ?";
 		

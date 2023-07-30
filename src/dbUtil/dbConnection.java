@@ -6,8 +6,10 @@ import java.sql.SQLException;
 
 public class dbConnection {
 	
+	//location of the SQLite database
 	private static final String SQCONN = "jdbc:sqlite:lib/glimpse.sqlite";
 	
+	//Connect to the database
 	public static Connection getConnection() throws SQLException {
 		
 		try {

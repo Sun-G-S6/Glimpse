@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
@@ -17,11 +16,6 @@
          </font>
       </Label>
       <Circle fill="WHITE" layoutX="1562.0" layoutY="406.0" radius="900.0" stroke="WHITE" strokeType="INSIDE" />
-      <TextField fx:id="nameLbl" layoutX="935.0" layoutY="310.0" prefHeight="40.0" prefWidth="359.0" promptText="Enter Your Name Here" style="-fx-background-color: #F2F0FA;">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </TextField>
       <PasswordField fx:id="pwField" layoutX="935.0" layoutY="360.0" prefHeight="40.0" prefWidth="359.0" promptText="Enter Your Password Here" style="-fx-background-color: #F2F0FA;">
          <font>
             <Font size="19.0" />
@@ -42,5 +36,10 @@
       <Label fx:id="loginStatusLbl" alignment="CENTER" layoutX="952.0" layoutY="272.0" prefHeight="28.0" prefWidth="359.0" textFill="#9c61e4" />
       <Label fx:id="dbStatusLbl" layoutX="1021.0" layoutY="18.0" prefHeight="17.0" prefWidth="272.0" />
       <Label layoutX="904.0" layoutY="18.0" prefHeight="17.0" prefWidth="98.0" text="Database Status:" />
+      <Label layoutX="760.0" layoutY="360.0" prefHeight="40.0" prefWidth="166.0" text="Enter your password:" textFill="#97569e">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
