@@ -14,14 +14,13 @@ import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTimePicker;
 
 import application.login.LoginPageController;
+import application.view.ViewController;
 import dbUtil.dbConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
@@ -30,7 +29,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 
@@ -173,9 +171,9 @@ public class HomePageController implements Initializable{
 	 * */
 	@FXML public void changePWAction(ActionEvent e ) {
 		try {
+				ViewController view = new ViewController();
+				view.closeWindow((Stage)this.changePWBtn.getScene().getWindow());
 				LoginPageController loginController = new LoginPageController();
-				Stage stage = (Stage)this.changePWBtn.getScene().getWindow();
-				stage.close();
 				loginController.changePW();
 			
 		}catch (Exception localException) {
@@ -187,20 +185,11 @@ public class HomePageController implements Initializable{
 	 * */
 	@FXML public void logoutAction(ActionEvent e) {
 		try {
-			Stage stage = (Stage)this.logoutBtn.getScene().getWindow();
-			stage.close();
+			ViewController view = new ViewController();
+			view.closeWindow((Stage)this.logoutBtn.getScene().getWindow());
+			LoginPageController loginController = new LoginPageController();
+			loginController.logoutAction();
 			
-			Stage userStage = new Stage();
-			FXMLLoader loader = new FXMLLoader();
-			Pane root = (Pane)loader.load(getClass().getResource("/application/login/LoginPage.fxml").openStream());
-			LoginPageController loginController = (LoginPageController)loader.getController();
-				
-			Scene scene = new Scene(root);
-			userStage.setScene(scene);
-			userStage.setTitle("Glimpse");
-			userStage.setResizable(false);
-			userStage.show();
-				
 		}catch (Exception localException) {
 			localException.printStackTrace();
 		}

@@ -7,17 +7,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import application.user.UserCredentials;
+import application.view.ViewController;
 import application.changePW.ChangePWPageController;
 import application.home.HomePageController;
 import application.changePW.ForgotPWPageController;
@@ -56,19 +55,18 @@ public class LoginPageController implements Initializable{
 			UserCredentials currentUser = new UserCredentials();
 			
 			if(!currentUser.getPasswordFromDatabase().equals("p") && this.loginModel.isLogin(this.pwField.getText())) {
-				Stage stage = (Stage)this.loginBtn.getScene().getWindow();
-				stage.close();
+				ViewController view = new ViewController();
+				view.closeWindow((Stage)this.loginBtn.getScene().getWindow());
 				userLogin();
 			}
 			else if (currentUser.getPasswordFromDatabase().equals("p") && this.loginModel.isLogin(this.pwField.getText()) ) {
-				Stage stage = (Stage)this.loginBtn.getScene().getWindow();
-				stage.close();
+				ViewController view = new ViewController();
+				view.closeWindow((Stage)this.loginBtn.getScene().getWindow());
 				changePW();
 			}
 			else {
 				this.loginStatusLbl.setText("Wrong Password");
 			}
-			
 		}catch (Exception localException) {
 			localException.printStackTrace();
 		}
@@ -78,10 +76,9 @@ public class LoginPageController implements Initializable{
 	 * */
 	@FXML public void forgotAction(MouseEvent e ) {
 		try {
-				Stage stage = (Stage)this.loginBtn.getScene().getWindow();
-				stage.close();
-				forgotPW();
-			
+			ViewController view = new ViewController();
+			view.closeWindow((Stage)this.loginBtn.getScene().getWindow());
+			forgotPW();
 		}catch (Exception localException) {
 			localException.printStackTrace();
 		}
@@ -90,16 +87,10 @@ public class LoginPageController implements Initializable{
 	// Login function that shows the home page
 	public void userLogin() {
 		try {
-			Stage userStage = new Stage();
 			FXMLLoader loader = new FXMLLoader();
 			Pane root = (Pane)loader.load(getClass().getResource("/application/home/HomePage.fxml").openStream());
-			HomePageController loginController = (HomePageController)loader.getController();
-			
-			Scene scene = new Scene(root);
-			userStage.setScene(scene);
-			userStage.setTitle("Home Page");
-			userStage.setResizable(false);
-			userStage.show();
+			ViewController view = new ViewController();
+			view.showNewStage(root);
 		}catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -108,16 +99,10 @@ public class LoginPageController implements Initializable{
 	//Changing password function that goes to the changing password page
 	public void changePW() {
 		try {
-			Stage userStage = new Stage();
 			FXMLLoader loader = new FXMLLoader();
 			Pane root = (Pane)loader.load(getClass().getResource("/application/changePW/ChangePWPage.fxml").openStream());
-			ChangePWPageController changePWController = (ChangePWPageController)loader.getController();
-			
-			Scene scene = new Scene(root);
-			userStage.setScene(scene);
-			userStage.setTitle("Change Password");
-			userStage.setResizable(false);
-			userStage.show();
+			ViewController view = new ViewController();
+			view.showNewStage(root);
 		}catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -126,18 +111,25 @@ public class LoginPageController implements Initializable{
 	//Forgot password function that goes to the forgot password page
 	public void forgotPW() {
 		try {
-			Stage userStage = new Stage();
 			FXMLLoader loader = new FXMLLoader();
 			Pane root = (Pane)loader.load(getClass().getResource("/application/changePW/ForgotPWPage.fxml").openStream());
-			ForgotPWPageController forgotPWController = (ForgotPWPageController)loader.getController();
-			
-			Scene scene = new Scene(root);
-			userStage.setScene(scene);
-			userStage.setTitle("Forgot Password");
-			userStage.setResizable(false);
-			userStage.show();
+			ViewController view = new ViewController();
+			view.showNewStage(root);
 		}catch (IOException e) {
 			e.printStackTrace();
+		}
+	}
+	
+	/*	Closes the window and redirects to the Login page
+	 * */
+	public void logoutAction() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			Pane root = (Pane)loader.load(getClass().getResource("/application/login/LoginPage.fxml").openStream());
+			ViewController view = new ViewController();
+			view.showNewStage(root);
+		}catch (Exception localException) {
+			localException.printStackTrace();
 		}
 	}
 	
